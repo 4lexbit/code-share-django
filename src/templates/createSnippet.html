@@ -7,23 +7,25 @@
 {% block title%}create Snippet{% endblock title %}
 
 {% block extra_head %}
-    <style>
-    .asteriskField {
-        display: none;
-    }
-    </style>
+    <link rel="stylesheet" href="{% static "css/form.css" %}" /> 
 {% endblock extra_head %}
 
 {% block body %}
 <div class="container mx-auto pt-12">
     <form method="post" class="uniForm">
         {% csrf_token %}
-        {{ form.title|as_crispy_field }}
+        <!--{{ form.title|as_crispy_field }}
         {{ form.code|as_crispy_field }}
         {{ form.lang|as_crispy_field }}
-        <button type="submit" class="">Submit</button>
+        <div class="form-group g-recaptcha" data-sitekey="6LfzZlAaAAAAANHl7mevl6PaGUzu1S9YquYL77jX"></div>-->
+        {% crispy form %}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
     </form>
 </div>
+
+    <script src="{% static 'js/code.js' %}"></script>
+
 {% endblock body %}
 
 {% block extra_body %}{% endblock extra_body %}
