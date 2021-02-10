@@ -125,16 +125,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 if not DEBUG:
-        STATIC_ROOT = ''
+    STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-#Crispy Forms
+# Crispy Forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-#reCAPTCHA
+# reCAPTCHA
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LfzZlAaAAAAAGNolZi2JJDsUVPkBlN0q4a-dAEp'
-
