@@ -7,7 +7,13 @@
 {% block extra_head %}{% endblock extra_head %}
 
 {% block body %}
-    <h1 class="text-center ">Hello there!</h1>
+<div class="home py-24 font-bold text-center">
+    <h1 class="text-5xl mb-5">Hello there&#128075;</h1>
+    <p class="text-3xl mb-5">Here you can create snippets of code and share them with the world&#127757;</p>
+    <p class="text-xl mb-12">&#9888; After 10 days snippets are deleted</p>
+    <a class="tryit px-10 py-2 bg-indigo-500 text-white text-xl font-bold  rounded-3xl" href="{% url 'snippet:create' %}">Try it!</a>
+</div>
+
 {% endblock body %}
 
 {% block extra_body %}{% endblock extra_body %}

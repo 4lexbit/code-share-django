@@ -7,11 +7,14 @@
 {% block title%}create Snippet{% endblock title %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static "css/form.css" %}" /> 
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+
+    <script type="text/javascript" src={% static 'js/code.js' %}></script>
 {% endblock extra_head %}
 
 {% block body %}
-<div class="container mx-auto pt-12">
+<div class="mx-auto pt-12">
+    <h1 class="text-center text-indigo-500 text-5xl font-bold mb-4">Write your snippet to share</h1>
     <form method="post" class="uniForm">
         {% csrf_token %}
         <!--{{ form.title|as_crispy_field }}
@@ -23,9 +26,6 @@
 
     </form>
 </div>
-
-    <script src="{% static 'js/code.js' %}"></script>
-
 {% endblock body %}
 
 {% block extra_body %}{% endblock extra_body %}
