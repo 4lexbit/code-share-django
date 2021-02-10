@@ -3,19 +3,6 @@ from .forms import SnippetForm
 from .models import Snippet
 from django.views.generic import DetailView, FormView
 
-"""def createSnippet(request):
-    if request.method == 'POST':
-        form = SnippetForm(request.POST)
-        if form.is_valid():
-            snippet = form.save(commit=True)
-            snippet.save()
-            return HttpResponseRedirect(reverse('snippet:detail', kwargs={'pk': snippet.id}))
-    else:
-        form = SnippetForm()
-    context = {'form': form}
-    return render(request, 'createSnippet.html', context)
-"""
-
 
 class CreateSnippet(FormView):
     form_class = SnippetForm
