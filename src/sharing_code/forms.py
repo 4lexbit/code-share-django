@@ -9,27 +9,32 @@ class SnippetForm(forms.ModelForm):
 
     class Meta():
         model = Snippet
-        # widgets = {}
+        widgets = {
+            'title': forms.TextInput(attrs={'placeholder': 'Snippet title'}),
+            'code': forms.Textarea(attrs={'placeholder': 'Your snippet code'}),
+        }
         fields = {'title', 'code', 'lang'}
         labels = {
-            'title': "Snippet Title",
-            'lang': "Choose syntax ",
+            'title': '',
+            'code': '',
+            'lang': '',
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.layout = Layout(
-            Field('title', css_class='qwerty'),
-            Field('code', css_class=''),
             Div(
-                Field('lang', css_class=''),
-                HTML(
-                    '<div class="form-group g-recaptcha" data-sitekey="6LfzZlAaAAAAANHl7mevl6PaGUzu1S9YquYL77jX"></div>'),
-                ButtonHolder(
-                    Submit('submit', 'Submit',
-                           css_class='border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 w-auto transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline')
-                ),
-                css_class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4'
+                Field('title', css_class='focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent', ),
+                Field('code', css_class='focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent'),
+                Field('lang', css_class='focus:ring-2 focus:ring-indigo-500'),
+                Div(
+                    HTML(
+                        '<div class="g-recaptcha" data-sitekey="6LfzZlAaAAAAANHl7mevl6PaGUzu1S9YquYL77jX"></div>'),
+                    Submit('submit', 'Submit', css_class='w-full py-6 border-2 bg-white border-indigo-500 text-indigo-500 font-bold rounded-md transition duration-300 ease-in-out hover:bg-indigo-500  hover:text-white'),
+                    css_class='flex items-center buttons'
+                )
+                ,
+                css_class='rounded-3xl mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl'
             )
         )

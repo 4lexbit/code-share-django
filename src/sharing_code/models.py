@@ -1,13 +1,12 @@
 from django.db import models
 from django.shortcuts import reverse
-from django.utils.crypto import get_random_string
 import uuid
 
 
 class Snippet(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=50, default='Your snippet')
-    code = models.TextField(default='Write your code here')
+    title = models.CharField(max_length=50)
+    code = models.TextField()
     langs = [('Text', 'None'),
              ('Python', 'Python'),
              ('JavaScript', 'Javascript'),
