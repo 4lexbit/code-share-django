@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -155,3 +156,4 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LeNDFUaAAAAAJkpSeyz3LchhpmbOBzXQa00-AFK'
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
