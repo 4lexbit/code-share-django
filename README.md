@@ -17,16 +17,16 @@ This is a simple code snippet sharing app that lets you share code snippets with
 
 - Make migrations using
   ```
-  .src/manage.py makemigrations
+  ./src/manage.py makemigrations
 
 - Migrate Database
   ```
-  .src/manage.py migrate
+  ./src/manage.py migrate
 
 - Create a superuser
   ```
-  .src/manage.py createsuperuser
+  ./src/manage.py createsuperuser
   
 - Run server using
   ```
-  .src/manage.py runserver
+  ./src/manage.py runserver
