@@ -30,7 +30,7 @@ class SnippetForm(forms.ModelForm):
                 Field('lang', css_class='focus:ring-2 focus:ring-indigo-500'),
                 Div(
                     HTML(
-                        '<div class="g-recaptcha" data-sitekey="6LfzZlAaAAAAANHl7mevl6PaGUzu1S9YquYL77jX"></div>'),
+                        '<div class="g-recaptcha" data-sitekey="6LeNDFUaAAAAAFUj-c8ILIrEgIggG87RVg5hATb0"></div>'),
                     Submit('submit', 'Submit', css_class='w-full py-6 border-2 bg-white border-indigo-500 text-indigo-500 font-bold rounded-md transition duration-300 ease-in-out hover:bg-indigo-500  hover:text-white'),
                     css_class='flex items-center buttons'
                 )
