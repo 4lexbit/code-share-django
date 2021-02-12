@@ -1,4 +1,4 @@
-#Code-share-django
+# Code-share-django
 This is a simple code snippet sharing app that lets you share code snippets with easy copy paste options and a unique url
 
 ## Tech stack
