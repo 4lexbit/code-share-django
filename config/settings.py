@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'tglww=*+z+5+x%@$@ld=la44k(x2r9!=c8=+*p!*rv&uz-prlq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 PREREQ_APPS = [
@@ -135,12 +136,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-if not DEBUG:
-    STATIC_ROOT = ''
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Crispy Forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
@@ -148,3 +149,9 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 # reCAPTCHA
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LfzZlAaAAAAAGNolZi2JJDsUVPkBlN0q4a-dAEp'
+
+# Heroku deploy
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
