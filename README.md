@@ -14,19 +14,32 @@ This is a simple code snippet sharing app that lets you share code snippets with
 - Install dependencies using
   ```
   pip install -r requirements.txt
-
+  
+- In setting.py replace the existing code with this code
+  ```
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+  }
+ 
+ 
 - Make migrations using
   ```
-  .src/manage.py makemigrations
+  ./src/manage.py makemigrations
 
 - Migrate Database
   ```
-  .src/manage.py migrate
+  ./src/manage.py migrate
 
 - Create a superuser
   ```
-  .src/manage.py createsuperuser
+  ./src/manage.py createsuperuser
   
 - Run server using
   ```
-  .src/manage.py runserver
+  ./src/manage.py runserver
+  
+### Demo
+Available at this [link](https://snippet-share-django.herokuapp.com/)
