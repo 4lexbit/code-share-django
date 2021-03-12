@@ -38,10 +38,13 @@ PREREQ_APPS = [
 
     'crispy_forms',
     'crispy_tailwind',
+
+    'rest_framework',
 ]
 
 PROJECT_APPS = [
-    'sharing_code'
+    'sharing_code',
+    'api'
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
